@@ -1,0 +1,28 @@
+// 实验班培养方案可视化 - 交互逻辑
+
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('实验班培养方案可视化已加载');
+
+  // 参考通知链接悬停效果
+  const refLinks = document.querySelectorAll('.ref-notice');
+  refLinks.forEach(link => {
+    link.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateX(3px)';
+    });
+    link.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateX(0)';
+    });
+  });
+
+  // 单元格条目悬停高亮
+  const cellItems = document.querySelectorAll('.cell-item');
+  cellItems.forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      this.style.background = 'rgba(102, 126, 234, 0.06)';
+      this.style.borderRadius = '4px';
+    });
+    item.addEventListener('mouseleave', function() {
+      this.style.background = '';
+    });
+  });
+});

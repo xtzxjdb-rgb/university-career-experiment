@@ -1,0 +1,315 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  padding: 30px 0 20px;
+  color: white;
+}
+
+header h1 {
+  font-size: 2.4em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header .subtitle {
+  font-size: 1.15em;
+  opacity: 0.9;
+}
+
+/* 主表格容器 */
+.table-wrapper {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.18);
+  margin-bottom: 30px;
+}
+
+.program-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.program-table th,
+.program-table td {
+  border: 1px solid #e0e0e0;
+  padding: 0;
+  vertical-align: top;
+  position: relative;
+}
+
+/* 表头 */
+.program-table thead th {
+  color: white;
+  font-size: 1.15em;
+  font-weight: 600;
+  padding: 16px 10px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.program-table thead th:first-child {
+  width: 100px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.col-y1 { background: linear-gradient(135deg, #a8e6cf, #88d8b0) !important; }
+.col-y2 { background: linear-gradient(135deg, #ffd3b6, #ffaaa5) !important; }
+.col-y3 { background: linear-gradient(135deg, #b5c7ff, #8fa8ff) !important; }
+.col-y4 { background: linear-gradient(135deg, #d4a5ff, #c084fc) !important; }
+
+/* 行标题 */
+.program-table tbody th {
+  font-size: 1em;
+  font-weight: 600;
+  text-align: center;
+  padding: 14px 8px;
+  color: white;
+  width: 100px;
+}
+
+.row-fall { background: linear-gradient(180deg, #f6a085, #f093fb); }
+.row-winter { background: linear-gradient(180deg, #89b4f7, #6dd5ed); }
+.row-spring { background: linear-gradient(180deg, #43e97b, #38f9d7); color: #2d5016 !important; }
+.row-summer { background: linear-gradient(180deg, #fbc2eb, #f9a8d4); color: #7c2d5e !important; }
+
+/* 单元格内容 */
+.cell-content {
+  padding: 14px 16px;
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cell-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  line-height: 1.6;
+  font-size: 0.92em;
+}
+
+.cell-item .dot {
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-top: 7px;
+}
+
+/* 三种颜色分类 */
+.type-course .dot { background: #9b59b6; }
+.type-match .dot { background: #3498db; }
+.type-result .dot { background: #e74c3c; }
+
+.cell-item .text {
+  flex: 1;
+}
+
+/* 参考通知链接 */
+.ref-notice {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.88em;
+  color: #3498db;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding-left: 14px;
+}
+
+.ref-notice:hover {
+  color: #2074b7;
+  text-decoration: underline;
+  transform: translateX(3px);
+}
+
+.ref-notice::before {
+  content: '\01F4C4 ';
+}
+
+/* 斜线划掉（尚未招生） */
+.cell-na {
+  background: #f0f0f0;
+  min-height: 90px;
+  height: 100%;
+  position: relative;
+}
+
+.cell-na::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom right,
+    transparent calc(50% - 1px),
+    #d0d0d0 calc(50% - 1px),
+    #d0d0d0 calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+}
+
+/* 图例区域 */
+.legend-section {
+  background: white;
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.legend-section h3 {
+  color: #667eea;
+  margin-bottom: 16px;
+  font-size: 1.2em;
+}
+
+.legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95em;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-dot.course { background: #9b59b6; }
+.legend-dot.match { background: #3498db; }
+.legend-dot.result { background: #e74c3c; }
+
+/* 备注区域 */
+.notes-section {
+  background: white;
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.notes-section h3 {
+  color: #667eea;
+  margin-bottom: 16px;
+  font-size: 1.2em;
+}
+
+.notes-section ul {
+  list-style: none;
+}
+
+.notes-section li {
+  padding: 10px 0;
+  border-bottom: 1px dashed #eee;
+  line-height: 1.7;
+  font-size: 0.95em;
+}
+
+.notes-section li:last-child {
+  border-bottom: none;
+}
+
+.notes-section li::before {
+  content: '\25B8 ';
+  color: #667eea;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  opacity: 0.85;
+  font-size: 0.95em;
+}
+
+/* 单元格悬停效果 */
+.program-table td:hover {
+  background: #f8f9ff;
+  transition: background 0.2s ease;
+}
+
+/* 年级色带 */
+.year-band {
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 6px;
+}
+
+.year-band.y1 { background: linear-gradient(90deg, #a8e6cf, #88d8b0); }
+.year-band.y2 { background: linear-gradient(90deg, #ffd3b6, #ffaaa5); }
+.year-band.y3 { background: linear-gradient(90deg, #b5c7ff, #8fa8ff); }
+.year-band.y4 { background: linear-gradient(90deg, #d4a5ff, #c084fc); }
+
+/* 响应式 */
+@media (max-width: 900px) {
+  header h1 {
+    font-size: 1.6em;
+  }
+  .program-table {
+    font-size: 0.85em;
+  }
+  .cell-content {
+    padding: 10px 12px;
+    min-height: 70px;
+  }
+  .program-table thead th {
+    font-size: 1em;
+    padding: 12px 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  header h1 {
+    font-size: 1.3em;
+  }
+  .program-table thead th:first-child,
+  .program-table tbody th {
+    width: 60px;
+    font-size: 0.85em;
+    padding: 8px 4px;
+  }
+  .cell-content {
+    padding: 8px;
+    min-height: 50px;
+  }
+  .cell-item {
+    font-size: 0.82em;
+  }
+}
