@@ -313,3 +313,151 @@ footer {
     font-size: 0.82em;
   }
 }
+
+/* 弹窗样式 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.3em;
+}
+
+.modal-close {
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.modal-close:hover {
+  opacity: 1;
+}
+
+.modal-video-link {
+  background: linear-gradient(90deg, #fff3e0, #ffe0b2);
+  padding: 14px 24px;
+  font-size: 0.95em;
+  border-bottom: 1px solid #ffe0b2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.video-icon {
+  font-size: 1.2em;
+}
+
+.modal-video-link a {
+  color: #e65100;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.modal-video-link a:hover {
+  text-decoration: underline;
+}
+
+.modal-body {
+  padding: 20px 24px;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.teacher-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.teacher-list li {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  transition: background 0.2s ease;
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
+
+.teacher-list li:hover {
+  background: #f5f5ff;
+}
+
+.teacher-list li:last-child {
+  border-bottom: none;
+}
+
+.teacher-list a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95em;
+}
+
+.teacher-list a::before {
+  content: '\01F4C4';
+  font-size: 1.1em;
+}
+
+.teacher-list a:hover {
+  color: #667eea;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    max-height: 90vh;
+  }
+  .modal-header {
+    padding: 14px 18px;
+  }
+  .modal-body {
+    padding: 16px 18px;
+  }
+  .teacher-list li {
+    padding: 10px 12px;
+  }
+}

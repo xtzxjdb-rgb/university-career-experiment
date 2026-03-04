@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="cell-item type-match">
                   <span class="dot"></span>
-                  <span class="text">师生双向了解</span>
+                  <span class="text" style="cursor:pointer;color:#3498db;text-decoration:underline;" onclick="openTeacherModal()">师生双向了解（点击查看老师简介）</span>
                 </div>
                 <div class="cell-item type-course">
                   <span class="dot"></span>
@@ -277,7 +277,35 @@
     </footer>
   </div>
 
+  <!-- 老师简介弹窗 -->
+  <div id="teacherModal" class="modal-overlay" style="display:none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>中心老师简介</h3>
+        <span class="modal-close" onclick="closeTeacherModal()">&times;</span>
+      </div>
+      <div class="modal-video-link">
+        <span class="video-icon">🎬</span>
+        导师视频介绍请访问：<a href="https://pan.quark.cn/s/0d701b675f13" target="_blank">https://pan.quark.cn/s/0d701b675f13</a>
+      </div>
+      <div class="modal-body">
+        <ul class="teacher-list">
+          <li><a href="files/中心老师简介/导师个人介绍-陈怡心.pdf" target="_blank">陈怡心 - 导师个人介绍</a></li>
+          <li><a href="files/中心老师简介/实验班学生匹配说明 丁怡.docx" target="_blank">丁怡 - 实验班学生匹配说明</a></li>
+          <li><a href="files/中心老师简介/导师个人介绍-范翻.pdf" target="_blank">范翻 - 导师个人介绍</a></li>
+          <li><a href="files/中心老师简介/导师个人介绍_耿纯.docx" target="_blank">耿纯 - 导师个人介绍</a></li>
+          <li><a href="files/中心老师简介/李慧青.docx" target="_blank">李慧青 - 导师简介</a></li>
+          <li><a href="files/中心老师简介/实验班学生匹配说明-阮睿.pdf" target="_blank">阮睿 - 实验班学生匹配说明</a></li>
+          <li><a href="files/中心老师简介/王斐然 导师个人介绍(1).docx" target="_blank">王斐然 - 导师个人介绍</a></li>
+          <li><a href="files/中心老师简介/导师个人介绍-王麒植.pdf" target="_blank">王麒植 - 导师个人介绍</a></li>
+          <li><a href="files/中心老师简介/导师个人介绍-周世愚.pdf" target="_blank">周世愚 - 导师个人介绍</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <script src="renderer.js"></script>
 </body>
 </html>
+
 
